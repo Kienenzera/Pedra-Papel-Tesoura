@@ -1,18 +1,64 @@
 <html>
-    <head>
-   
-  </head>
-  <body style="text-align: center; background-color: hsl(320, 100%, 50%)">
-   <h1> Pedra Papel Tesoura</h1>
-   <p>informa seu nome: </p>
-   <input type="text"/>
-   <p>escolha uma opção</p>
 
-   <button style="padding: 10px 15px; margin: 10px;">Pedra</button>
-   <button style="padding: 10px 15px; margin: 10px;">Papel</button>
-   <button style="padding: 10px 15px; margin: 10px;">Tesoura</button>
+<head>
 
-   <p></p>
-  </body>
+</head>
+
+<body style="text-align: center; background-color: hsl(231, 100%, 50%)">
+  <h1> Pedra Papel Tesoura</h1>
+  <p>informa seu nome: </p>
+  <input type="text" />
+  <p>escolha uma opção</p>
+
+  <button style="padding: 10px 15px; margin: 10px;" id="pedra">Pedra</button>
+  <button style="padding: 10px 15px; margin: 10px;" id="Papel">Papel</button>
+  <button style="padding: 10px 15px; margin: 10px;" id="Tesoura">Tesoura</button>
+
+  <p></p>
+
+
+  <script>
+    function gerajogadaaleatoria() {
+      const operaçoes = ['pedra', 'papel', 'tesoura']
+      const operaçoesaleatoria = Math.floor(Math.random() * 3)
+      return operaçoesaleatoria
+    }
+
+    function jogar(jogadajogador) {
+      const jogadaDocomputador = gerajogadaaleatoria()
+      let resultado = ''
+      if (jogadadojogador === jogadaDocomputador){
+        resultado = 'empate'
+      } else if ( 
+        (jogadadojogador === 'pedra' && jogadaDocomputador ==='tesoura') ||
+        (jogadadojogador === 'tesoura' && jogadaDocomputador ==='papel') ||
+        (jogadadojogador === 'papel' && jogadaDocomputador ==='pedra')){
+        resultado = 'Voce Venceu'
+
+
+        resultado = 'Voce Perdeu'
+       document.getElementById('resultado'.innerTEXT)
+        }
+    }
+
+    const pedra = document.getElementById('pedra')
+    pedra.addEventListener('click', function () {
+      alert(gerajogadaaleatoria())
+    }
+    )
+
+
+    const papel = document.getElementById('papel')
+    papel.addEventListener('click', function () {
+      alert(gerajogadaaleatoria())
+    })
+
+    const tesoura = document.getElementById('tesoura')
+    tesoura.addEventListener('click', function () {
+      alert(gerajogadaaleatoria())
+    })
+
+  </script>
+</body>
+
 </html>
-
